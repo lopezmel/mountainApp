@@ -40,6 +40,8 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoibG9wZXptZTE3IiwiYSI6ImNpejFxZ2lpdDA0bnEzMm9hc2w5cjlxZ2oifQ.vCdI4BB0bgwrp4g7oiklQA</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

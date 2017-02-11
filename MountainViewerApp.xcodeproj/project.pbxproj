@@ -15,7 +15,24 @@
 		8A6C06521E331EA200317782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C06511E331EA200317782 /* Assets.xcassets */; };
 		8A6C06551E331EA200317782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C06531E331EA200317782 /* LaunchScreen.storyboard */; };
 		8A6C065E1E331FCE00317782 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6C065D1E331FCE00317782 /* CoreLocation.framework */; };
+		8AF577931E4ED69200F5CA1A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577921E4ED69200F5CA1A /* CoreMotion.framework */; };
+		8AF577951E4FBB0E00F5CA1A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */; };
+		8AF577961E4FBB0F00F5CA1A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8AF577971E4FBB0F00F5CA1A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8AF577961E4FBB0F00F5CA1A /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +45,8 @@
 		8A6C06541E331EA200317782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A6C06561E331EA200317782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6C065D1E331FCE00317782 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8AF577921E4ED69200F5CA1A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF577931E4ED69200F5CA1A /* CoreMotion.framework in Frameworks */,
 				8A6C065E1E331FCE00317782 /* CoreLocation.framework in Frameworks */,
+				8AF577951E4FBB0E00F5CA1A /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +66,7 @@
 		8A6C063C1E331EA100317782 = {
 			isa = PBXGroup;
 			children = (
+				8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */,
 				8A6C06471E331EA200317782 /* MountainViewerApp */,
 				8A6C06461E331EA200317782 /* Products */,
 				8A6C065C1E331FCD00317782 /* Frameworks */,
@@ -77,6 +99,7 @@
 		8A6C065C1E331FCD00317782 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AF577921E4ED69200F5CA1A /* CoreMotion.framework */,
 				8A6C065D1E331FCE00317782 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -92,6 +115,8 @@
 				8A6C06411E331EA200317782 /* Sources */,
 				8A6C06421E331EA200317782 /* Frameworks */,
 				8A6C06431E331EA200317782 /* Resources */,
+				8AF577971E4FBB0F00F5CA1A /* Embed Frameworks */,
+				8AF577991E4FBBA900F5CA1A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -149,6 +174,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AF577991E4FBBA900F5CA1A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A6C06411E331EA200317782 /* Sources */ = {
@@ -280,6 +321,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YE4DGBZ493;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MountainViewerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OregonState.MountainViewerApp;
@@ -293,6 +338,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YE4DGBZ493;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MountainViewerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OregonState.MountainViewerApp;
