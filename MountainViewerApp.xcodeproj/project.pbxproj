@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8A4F3F461E3C5DC300A5A759 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */; };
+		8A64FAB71E562702004A2B61 /* AcclerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */; };
+		8A64FAB91E5679B3004A2B61 /* CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A64FAB81E5679B3004A2B61 /* CompassViewController.swift */; };
 		8A6C06491E331EA200317782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C06481E331EA200317782 /* AppDelegate.swift */; };
 		8A6C064B1E331EA200317782 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C064A1E331EA200317782 /* FirstViewController.swift */; };
-		8A6C064D1E331EA200317782 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C064C1E331EA200317782 /* SecondViewController.swift */; };
 		8A6C06501E331EA200317782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C064E1E331EA200317782 /* Main.storyboard */; };
 		8A6C06521E331EA200317782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C06511E331EA200317782 /* Assets.xcassets */; };
 		8A6C06551E331EA200317782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C06531E331EA200317782 /* LaunchScreen.storyboard */; };
@@ -36,10 +37,11 @@
 
 /* Begin PBXFileReference section */
 		8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcclerometerViewController.swift; sourceTree = "<group>"; };
+		8A64FAB81E5679B3004A2B61 /* CompassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassViewController.swift; sourceTree = "<group>"; };
 		8A6C06451E331EA200317782 /* MountainViewerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MountainViewerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6C06481E331EA200317782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A6C064A1E331EA200317782 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8A6C064C1E331EA200317782 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8A6C064F1E331EA200317782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A6C06511E331EA200317782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A6C06541E331EA200317782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,12 +88,13 @@
 			children = (
 				8A6C06481E331EA200317782 /* AppDelegate.swift */,
 				8A6C064A1E331EA200317782 /* FirstViewController.swift */,
-				8A6C064C1E331EA200317782 /* SecondViewController.swift */,
+				8A64FAB81E5679B3004A2B61 /* CompassViewController.swift */,
 				8A6C064E1E331EA200317782 /* Main.storyboard */,
 				8A6C06511E331EA200317782 /* Assets.xcassets */,
 				8A6C06531E331EA200317782 /* LaunchScreen.storyboard */,
 				8A6C06561E331EA200317782 /* Info.plist */,
 				8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */,
+				8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */,
 			);
 			path = MountainViewerApp;
 			sourceTree = "<group>";
@@ -196,9 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A6C064D1E331EA200317782 /* SecondViewController.swift in Sources */,
 				8A6C06491E331EA200317782 /* AppDelegate.swift in Sources */,
 				8A4F3F461E3C5DC300A5A759 /* ThirdViewController.swift in Sources */,
+				8A64FAB91E5679B3004A2B61 /* CompassViewController.swift in Sources */,
+				8A64FAB71E562702004A2B61 /* AcclerometerViewController.swift in Sources */,
 				8A6C064B1E331EA200317782 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

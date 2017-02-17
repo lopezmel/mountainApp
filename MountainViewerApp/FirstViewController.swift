@@ -14,8 +14,7 @@ import CoreLocation
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
     //Map
-    
-
+    //display current location Map
     @IBOutlet weak var map: MKMapView!
     
     let manager = CLLocationManager()
@@ -29,6 +28,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
         map.setRegion(region, animated: true)
         
+        //print to console
         print(location.altitude)
         print(location.speed)
         
@@ -40,6 +40,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     {
         super.viewDidLoad()
         
+        //constantly update location
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
