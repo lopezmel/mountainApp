@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A2A06AB1E6A6A5100A4E3C9 /* TopographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A06AA1E6A6A5000A4E3C9 /* TopographyViewController.swift */; };
+		8A2A06AD1E6A734900A4E3C9 /* TopographyCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A06AC1E6A734900A4E3C9 /* TopographyCameraViewController.swift */; };
 		8A4F3F461E3C5DC300A5A759 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */; };
 		8A64FAB71E562702004A2B61 /* AcclerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */; };
 		8A64FAB91E5679B3004A2B61 /* CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A64FAB81E5679B3004A2B61 /* CompassViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A2A06AA1E6A6A5000A4E3C9 /* TopographyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopographyViewController.swift; sourceTree = "<group>"; };
+		8A2A06AC1E6A734900A4E3C9 /* TopographyCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopographyCameraViewController.swift; sourceTree = "<group>"; };
 		8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcclerometerViewController.swift; sourceTree = "<group>"; };
 		8A64FAB81E5679B3004A2B61 /* CompassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				8A6C06561E331EA200317782 /* Info.plist */,
 				8A4F3F451E3C5DC200A5A759 /* ThirdViewController.swift */,
 				8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */,
+				8A2A06AA1E6A6A5000A4E3C9 /* TopographyViewController.swift */,
+				8A2A06AC1E6A734900A4E3C9 /* TopographyCameraViewController.swift */,
 			);
 			path = MountainViewerApp;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 				8A6C06491E331EA200317782 /* AppDelegate.swift in Sources */,
 				8A4F3F461E3C5DC300A5A759 /* ThirdViewController.swift in Sources */,
 				8A64FAB91E5679B3004A2B61 /* CompassViewController.swift in Sources */,
+				8A2A06AB1E6A6A5100A4E3C9 /* TopographyViewController.swift in Sources */,
 				8A64FAB71E562702004A2B61 /* AcclerometerViewController.swift in Sources */,
 				8A6C064B1E331EA200317782 /* FirstViewController.swift in Sources */,
+				8A2A06AD1E6A734900A4E3C9 /* TopographyCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
