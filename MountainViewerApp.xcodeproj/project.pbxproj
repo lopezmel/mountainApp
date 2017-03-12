@@ -18,6 +18,7 @@
 		8A6C06521E331EA200317782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C06511E331EA200317782 /* Assets.xcassets */; };
 		8A6C06551E331EA200317782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6C06531E331EA200317782 /* LaunchScreen.storyboard */; };
 		8A6C065E1E331FCE00317782 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6C065D1E331FCE00317782 /* CoreLocation.framework */; };
+		8ACF28931E73B98D00B05E9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF28921E73B98D00B05E9F /* MapViewController.swift */; };
 		8AF577931E4ED69200F5CA1A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577921E4ED69200F5CA1A /* CoreMotion.framework */; };
 		8AF577951E4FBB0E00F5CA1A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */; };
 		8AF577961E4FBB0F00F5CA1A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -51,6 +52,7 @@
 		8A6C06541E331EA200317782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A6C06561E331EA200317782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6C065D1E331FCE00317782 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8ACF28921E73B98D00B05E9F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8AF577921E4ED69200F5CA1A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				8A64FAB61E562702004A2B61 /* AcclerometerViewController.swift */,
 				8A2A06AA1E6A6A5000A4E3C9 /* TopographyViewController.swift */,
 				8A2A06AC1E6A734900A4E3C9 /* TopographyCameraViewController.swift */,
+				8ACF28921E73B98D00B05E9F /* MapViewController.swift */,
 			);
 			path = MountainViewerApp;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				8A64FAB71E562702004A2B61 /* AcclerometerViewController.swift in Sources */,
 				8A6C064B1E331EA200317782 /* FirstViewController.swift in Sources */,
 				8A2A06AD1E6A734900A4E3C9 /* TopographyCameraViewController.swift in Sources */,
+				8ACF28931E73B98D00B05E9F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
