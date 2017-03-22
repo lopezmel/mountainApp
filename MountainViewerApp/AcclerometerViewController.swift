@@ -23,6 +23,7 @@ class AcclerometerViewController: UIViewController {
         //updating speed
         motManager.accelerometerUpdateInterval = 0.5
         
+        //printing data to console
         motManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
             if let myData = data{
                 print(myData)

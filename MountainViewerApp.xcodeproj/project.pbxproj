@@ -22,6 +22,7 @@
 		8AF577931E4ED69200F5CA1A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577921E4ED69200F5CA1A /* CoreMotion.framework */; };
 		8AF577951E4FBB0E00F5CA1A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */; };
 		8AF577961E4FBB0F00F5CA1A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AFCAD6A1E7FB9B600D7CAA7 /* CurrentLocationTopographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFCAD691E7FB9B600D7CAA7 /* CurrentLocationTopographyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		8ACF28921E73B98D00B05E9F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8AF577921E4ED69200F5CA1A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8AF577941E4FBB0E00F5CA1A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		8AFCAD691E7FB9B600D7CAA7 /* CurrentLocationTopographyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocationTopographyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				8A2A06AA1E6A6A5000A4E3C9 /* TopographyViewController.swift */,
 				8A2A06AC1E6A734900A4E3C9 /* TopographyCameraViewController.swift */,
 				8ACF28921E73B98D00B05E9F /* MapViewController.swift */,
+				8AFCAD691E7FB9B600D7CAA7 /* CurrentLocationTopographyViewController.swift */,
 			);
 			path = MountainViewerApp;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				8A6C06491E331EA200317782 /* AppDelegate.swift in Sources */,
 				8A4F3F461E3C5DC300A5A759 /* ThirdViewController.swift in Sources */,
 				8A64FAB91E5679B3004A2B61 /* CompassViewController.swift in Sources */,
+				8AFCAD6A1E7FB9B600D7CAA7 /* CurrentLocationTopographyViewController.swift in Sources */,
 				8A2A06AB1E6A6A5100A4E3C9 /* TopographyViewController.swift in Sources */,
 				8A64FAB71E562702004A2B61 /* AcclerometerViewController.swift in Sources */,
 				8A6C064B1E331EA200317782 /* FirstViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
+//current location view
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
     //Map

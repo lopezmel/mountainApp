@@ -7,13 +7,27 @@
 //
 
 import UIKit
-
 import Mapbox
+import CoreLocation
 
-class TopographyCameraViewController: UIViewController, MGLMapViewDelegate {
+//Not currently initial screen must change intial view to the scene thats called Topography Camera view to see how it displays on device or simulator 
+//this view hovers around the location that or current location (uses camera overview from the top)
+class TopographyCameraViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate {
+    
+    var contoursLayer: MGLStyleLayer?
+    @IBOutlet weak var mapView: MGLMapView!
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        /*
+        using a hardcoded location
         let mapView = MGLMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
@@ -27,46 +41,36 @@ class TopographyCameraViewController: UIViewController, MGLMapViewDelegate {
         mapView.setCenter(center, zoomLevel: 7, direction: 0, animated: false)
         
         view.addSubview(mapView)
+         */
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.last
+        let url = NSURL(string: "mapbox://styles/mapbox/outdoors-v9")
+        let mapView = MGLMapView(frame: view.bounds, styleURL: url as URL?)
+        mapView.userTrackingMode = .follow
+        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        mapView.setCenter(center, zoomLevel: 12, animated: false)
+        view.addSubview(mapView)
+        //addToggleButton()
+        self.locationManager.stopUpdatingLocation()
+        //self.mapView.showsUserLocation = true
+    
     }
     
+    func  locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
+        print ("Errors:" + error.localizedDescription)
+    }
+
+    //make call to api
+    //1. map must load first
+    //2. rotaties around 200 degrees 
+    //3. camera view only last 10 secconds
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        // Wait for the map to load before initiating the first camera movement.
-        
-        // Create a camera that rotates around the same center point, rotating 180°.
-        // `fromDistance:` is meters above mean sea level that an eye would have to be in order to see what the map view is showing.
-        let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 4500, pitch: 15, heading: 180)
-        
-        // Animate the camera movement over 5 seconds.
-        mapView.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+
+        let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 4500, pitch: 15, heading: 2000)
+        mapView.setCamera(camera, withDuration: 10, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
     }
 }
 
-
-
-/*
-class TopographyCameraViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-*/

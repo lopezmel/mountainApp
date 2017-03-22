@@ -1,46 +1,75 @@
 //
-//  TopographyViewController.swift
+//  CurrentLocationTopographyViewController.swift
 //  MountainViewerApp
 //
-//  Created by Melissa Lopez on 3/3/17.
+//  Created by Melissa Lopez on 3/20/17.
 //  Copyright © 2017 Melissa Lopez. All rights reserved.
 //
 
 import UIKit
 import Mapbox
-//hard coded location with button displaying Pilot Butte for demo purposes to dsiplay anctually place with trails and contour lines that are visable
-class TopographyViewController: UIViewController, MGLMapViewDelegate {
-    var mapView: MGLMapView!
+import CoreLocation
+
+//using terrian api to display the current location
+//button that can hide or disapear countour lines only works on single view
+class CurrentLocationTopographyViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate{
+    
     var contoursLayer: MGLStyleLayer?
+
+    @IBOutlet weak var mapView: MGLMapView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //mapView = MGLMapView(frame: view.bounds)
-        //mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //making a url call to the outdoors style url
-        let url = NSURL(string: "mapbox://styles/mapbox/outdoors-v9")
-        mapView = MGLMapView(frame: view.bounds, styleURL: url as URL?)
-        
-        
-        //Piolt Butte
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 44.061441, longitude: -121.283245), zoomLevel: 14.5, animated: false)
-      
-        view.addSubview(mapView)
-        
-        //be able to turn on and off the contour lines on the device
-        addToggleButton()
-        
-        mapView.delegate = self
+
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        //addToggleButton()
     }
     
-    // Wait until the style is loaded before modifying the map style
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+    //getting users location and passing it into mapView Center
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.last
+        let url = NSURL(string: "mapbox://styles/mapbox/outdoors-v9")
+        let mapView = MGLMapView(frame: view.bounds, styleURL: url as URL?)
+        mapView.userTrackingMode = .follow
+        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        mapView.setCenter(center, zoomLevel: 12, animated: false)
+        view.addSubview(mapView)
+        addToggleButton()
+        self.locationManager.stopUpdatingLocation()
+        //self.mapView.showsUserLocation = true
+        
+        
+    }
+    
+    func  locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
+        print ("Errors:" + error.localizedDescription)
+    }
+    
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         addLayer(to: style)
     }
     
-    //layer to display the countrour lines which comes form teh terrain-v2 URL
-    //styling to what color to display the lines to to the size
     func addLayer(to style: MGLStyle) {
         let source = MGLVectorSource(identifier: "contours", configurationURL: NSURL(string: "mapbox://mapbox.mapbox-terrain-v2")! as URL)
         
@@ -60,7 +89,7 @@ class TopographyViewController: UIViewController, MGLMapViewDelegate {
         }
         
         self.contoursLayer = layer
-
+        
         showContours()
     }
     
@@ -82,7 +111,7 @@ class TopographyViewController: UIViewController, MGLMapViewDelegate {
     func hideContours() {
         self.contoursLayer?.isVisible = true
     }
-    //call from the api to display the button and is correctly displaying on the screen 
+    //call from the api to display the button and is correctly displaying on the screen
     func addToggleButton() {
         let button = UIButton(type: .system)
         button.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin]
@@ -94,4 +123,9 @@ class TopographyViewController: UIViewController, MGLMapViewDelegate {
         button.addTarget(self, action: #selector(TopographyViewController.toggleLayer(sender:)), for: .touchUpInside)
         self.view.addSubview(button)
     }
+
+    
+    
+    
+
 }

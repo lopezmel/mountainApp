@@ -11,6 +11,7 @@ import UIKit
 import CoreMotion
 import CoreLocation
 
+//acclerometer view
 class ThirdViewController: UIViewController {
     
 

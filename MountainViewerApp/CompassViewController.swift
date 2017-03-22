@@ -20,6 +20,7 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         
         //based on users phone orintation
+        //start to get user direction
         if (CLLocationManager.headingAvailable()) {
             locationManager.headingFilter = 1
             locationManager.startUpdatingHeading()
@@ -27,6 +28,7 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
+    //print to console
     func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
         print ("Compass:", heading.magneticHeading)
     }
