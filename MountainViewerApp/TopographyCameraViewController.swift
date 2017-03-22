@@ -12,6 +12,7 @@ import CoreLocation
 
 //Not currently initial screen must change intial view to the scene thats called Topography Camera view to see how it displays on device or simulator 
 //this view hovers around the location that or current location (uses camera overview from the top)
+//using hard coded value to display an actual topography on simulator
 class TopographyCameraViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate {
     
     var contoursLayer: MGLStyleLayer?
@@ -21,13 +22,14 @@ class TopographyCameraViewController: UIViewController, MGLMapViewDelegate, CLLo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        /*
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-        /*
-        using a hardcoded location
+        */
+        
+        //using a hardcoded location
         let mapView = MGLMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
@@ -37,13 +39,14 @@ class TopographyCameraViewController: UIViewController, MGLMapViewDelegate, CLLo
         // Piolt Butte
         let center = CLLocationCoordinate2D(latitude: 44.061441, longitude: -121.283245)
         
-        // Optionally set a starting point.
+        // Optional setting a starting point
         mapView.setCenter(center, zoomLevel: 7, direction: 0, animated: false)
         
         view.addSubview(mapView)
-         */
+        
     }
-
+    
+    //current location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations.last
